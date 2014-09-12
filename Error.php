@@ -148,9 +148,11 @@ class Error
     /**
      * Load the specific error to current error object
      *
+     * @param   int     Index of the error object
+     *
      * @return  object  Object of this class or false if index is out of bounds
      */
-    public function error($index)
+    public function errorAt($index)
     {
         if (isset($this->_errors[$index])) {
             $this->_currError["error"] = $this->_errors[$index];
@@ -159,6 +161,23 @@ class Error
         } else {
             return false;
         }
+    }
+
+    /**
+     * Error with specific code
+     *
+     * Retun the erorr object if found, or false otherwise
+     *
+     * @return  mixed
+     */
+    public function error($code)
+    {
+        foreach ($this->_errors as $error) {
+            if ($error->code === $code) {
+                return $error;
+            }
+        }
+        return false;
     }
 
     /**
