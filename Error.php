@@ -61,7 +61,7 @@ class Error
     public function add($code, $severity = 0, array $data = array())
     {
         $error = new \stdClass();
-        $error->errorcode = $code;
+        $error->code = $code;
         $error->message = isset($this->_language["error_" . strtolower($code)])
             ? $this->_language["error_" . strtolower($code)] : "";
         $error->severity = $severity;
