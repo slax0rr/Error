@@ -16,6 +16,6 @@
 		"psr-0": {
 			"SlaxWeb\\Error": ""
 		}
-	}
+	},
     "target-dir": "SlaxWeb/Error"
 }
